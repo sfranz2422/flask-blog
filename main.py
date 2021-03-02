@@ -25,7 +25,8 @@ ckeditor = CKEditor(app)
 Bootstrap(app)
 
 # for WTF Forms
-app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
+SECRET_KEY = os.urandom(32)
+app.config['SECRET_KEY'] = SECRET_KEY
 
 MY_EMAIL = os.getenv("MY_EMAIL")
 PASSWORD = os.getenv("PASSWORD")
